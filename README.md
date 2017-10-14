@@ -1,2 +1,3 @@
 # pom
-Super POM for central dependency management for Wolery projects
+
+Provides central dependency management for Wolery projects.
