@@ -148,6 +148,10 @@
           <configuration>
             <args>
               <arg>-opt:l:inline</arg>
+              <arg>-language:higherKinds</arg>
+              <arg>-language:existentials</arg>
+              <arg>-language:implicitConversions</arg>
+              <arg>-language:experimental.macros</arg>
             </args>
           </configuration>
         </plugin>
