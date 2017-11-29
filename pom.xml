@@ -98,10 +98,15 @@
         <scope>compile</scope>
       </dependency>
       <dependency>
+        <groupId>org.typelevel</groupId>
+        <artifactId>cats-core_2.12</artifactId>
+        <version>1.0.0-RC1</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
         <groupId>com.github.mpilquist</groupId>
         <artifactId>simulacrum_2.12</artifactId>
         <version>0.11.0</version>
-        <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>commons-cli</groupId>
