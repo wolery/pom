@@ -74,6 +74,12 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>org.scalactic</groupId>
+        <artifactId>scalactic_2.12</artifactId>
+        <version>3.0.4</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>org.scalacheck</groupId>
         <artifactId>scalacheck_2.12</artifactId>
         <version>1.13.5</version>
@@ -95,6 +101,7 @@
         <groupId>com.github.mpilquist</groupId>
         <artifactId>simulacrum_2.12</artifactId>
         <version>0.11.0</version>
+        <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>commons-cli</groupId>
@@ -123,6 +130,17 @@
     </dependencies>
   </dependencyManagement>
 
+ <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+  </dependencies>
+  
   <build>
 
     <sourceDirectory>src/main/scala</sourceDirectory>
@@ -244,6 +262,12 @@
               </goals>
             </execution>
           </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.0.2</version>
         </plugin>
 
         <plugin>
