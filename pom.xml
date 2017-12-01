@@ -175,12 +175,13 @@
           </executions>
           <configuration>
             <args>
-              <arg>-opt:l:inline</arg>
               <arg>-language:higherKinds</arg>
               <arg>-language:existentials</arg>
               <arg>-language:implicitConversions</arg>
               <arg>-language:experimental.macros</arg>
               <arg>-Ypartial-unification</arg>
+              <arg> ${scalac.arg.1} </arg>
+              <arg> ${scalac.arg.2} </arg>
             </args>
             <compilerPlugins>
               <compilerPlugin>
@@ -237,6 +238,7 @@
                   <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                     <manifestEntries>
                       <Built>                    ${maven.build.timestamp}      </Built>
+                      <Profile>                  ${owl.profile}                </Profile>
                       <Description>              ${project.description}        </Description>
                       <Artifact-Id>              ${project.artifactId}         </Artifact-Id>
                       <Specification-Title>      ${project.name}               </Specification-Title>  
@@ -286,4 +288,28 @@
     </pluginManagement>
 
   </build>
- </project>
+  
+ <profiles>
+    <profile>
+      <id>D</id>
+      <properties>
+        <scalac.arg.1>-unchecked</scalac.arg.1>
+        <scalac.arg.2>-Xcheckinit</scalac.arg.2>
+        <owl.profile>Debug [D]</owl.profile>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    
+    <profile>
+      <id>R</id>
+        <properties>
+          <scalac.arg.1>-opt:l:inline</scalac.arg.1>
+          <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
+          <owl.profile>Release [R]</owl.profile>
+        </properties>
+    </profile>
+  </profiles>
+  
+</project>
