@@ -224,7 +224,7 @@
           <artifactId>maven-shade-plugin</artifactId>
           <version>3.1.0</version>
           <configuration>
-            <minimizeJar>true</minimizeJar>
+            <minimizeJar>${shade.minjar}</minimizeJar>
             <createDependencyReducedPom>false</createDependencyReducedPom>
           </configuration>
           <executions>
@@ -293,9 +293,10 @@
     <profile>
       <id>D</id>
       <properties>
+        <owl.profile>Debug [D]  </owl.profile>
         <scalac.arg.1>-unchecked</scalac.arg.1>
-        <scalac.arg.2>-Xcheckinit</scalac.arg.2>
-        <owl.profile>Debug [D]</owl.profile>
+        <scalac.arg.2>          </scalac.arg.2>
+        <shade.minjar>false     </shade.minjar>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -304,11 +305,12 @@
     
     <profile>
       <id>R</id>
-        <properties>
-          <scalac.arg.1>-opt:l:inline</scalac.arg.1>
-          <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
-          <owl.profile>Release [R]</owl.profile>
-        </properties>
+      <properties>
+        <owl.profile>Release [R]</owl.profile>
+        <scalac.arg.1>-opt:l:inline</scalac.arg.1>
+        <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
+        <shade.minjar>false     </shade.minjar>
+      </properties>
     </profile>
   </profiles>
   
