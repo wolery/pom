@@ -199,8 +199,6 @@
               </goals>
               <configuration>
                 <args>
-                  <arg>-author</arg>
-                  <arg>-diagrams</arg>
                   <arg>-groups</arg>
                 </args>
               </configuration>
