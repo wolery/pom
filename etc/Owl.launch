@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="scala.application">
+    <listAttribute key="StepOutExcludePkgsOrClasses"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/owl-gui/src/main/scala/com/wolery/owl/gui/Owl.scala"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.wolery.owl.gui.owl"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="owl-gui"/>
+</launchConfiguration>
