@@ -1,3 +1,3 @@
 # wolery
 
-Wolery parent POM.
+Provides central dependency management for Wolery projects.
