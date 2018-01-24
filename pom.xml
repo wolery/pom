@@ -7,19 +7,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.wolery</groupId>
-  <artifactId>pom</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <artifactId>wolery</artifactId>
+  <version>1</version>
   <packaging>pom</packaging>
 
-  <name>Wolery Maven Super POM</name>
+  <name>Wolery Parent POM</name>
   <description>Provides central dependency management for Wolery projects.</description>
-  <url>https://github.com/wolery/owl/pom</url>
+  <url>https://github.com/wolery/wolery</url>
   <inceptionYear>October 2017</inceptionYear>
 
   <scm>
-    <url>https://github.com/wolery/pom</url>
-    <connection>scm:git:git://github.com/wolery/pom.git</connection>
-    <developerConnection>scm:git:git@github.com:wolery/pom.git</developerConnection>
+    <url>https://github.com/wolery/wolery</url>
+    <connection>scm:git:git://github.com/wolery/wolery.git</connection>
+    <developerConnection>scm:git:git@github.com:wolery/wolery.git</developerConnection>
   </scm>
 
   <organization>
