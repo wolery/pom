@@ -11,8 +11,8 @@
   <version>1</version>
   <packaging>pom</packaging>
 
-  <name>Wolery Parent POM</name>
-  <description>Provides central dependency management for Wolery projects.</description>
+  <name>Wolery</name>
+  <description>Wolery parent POM.</description>
   <url>https://github.com/wolery/wolery</url>
   <inceptionYear>October 2017</inceptionYear>
 
