@@ -19,11 +19,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.wolery</groupId>
-  <artifactId>wolery</artifactId>
-  <version>1</version>
+  <artifactId>pom</artifactId>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
-  <name>Wolery</name>
+  <name>Pom</name>
   <description>Provides central dependency management for Wolery projects.</description>
   <url>https://github.com/wolery/wolery</url>
   <inceptionYear>October 2017</inceptionYear>
