@@ -27,7 +27,7 @@
 
   <name>Pom</name>
   <description>Provides central dependency management for Wolery projects.</description>
-  <url>https://github.com/wolery/wolery</url>
+  <url>https://github.com/wolery/pom</url>
   <inceptionYear>October 2017</inceptionYear>
 
   <scm>
@@ -56,6 +56,9 @@
   </prerequisites>
 
   <properties>
+    <nest.version>1.0.0-SNAPSHOT</nest.version>
+    <scala.version>2.12.3</scala.version>
+    <scala.binary.version>2.12</scala.binary.version>
     <maven.compiler.source>9</maven.compiler.source>
     <maven.compiler.target>9</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -66,38 +69,20 @@
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-library</artifactId>
-        <version>2.12.3</version>
+        <version>${scala.version}</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-reflect</artifactId>
-        <version>2.12.3</version>
+        <version>${scala.version}</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-compiler</artifactId>
-        <version>2.12.3</version>
+        <version>${scala.version}</version>
         <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.scalatest</groupId>
-        <artifactId>scalatest_2.12</artifactId>
-        <version>3.0.4</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.scalactic</groupId>
-        <artifactId>scalactic_2.12</artifactId>
-        <version>3.0.4</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.scalacheck</groupId>
-        <artifactId>scalacheck_2.12</artifactId>
-        <version>1.13.5</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
@@ -113,14 +98,15 @@
       </dependency>
       <dependency>
         <groupId>org.typelevel</groupId>
-        <artifactId>cats-core_2.12</artifactId>
+        <artifactId>cats-core_${scala.binary.version}</artifactId>
         <version>1.0.0-RC1</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.github.mpilquist</groupId>
-        <artifactId>simulacrum_2.12</artifactId>
+        <artifactId>simulacrum_${scala.binary.version}</artifactId>
         <version>0.11.0</version>
+        <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>commons-cli</groupId>
@@ -140,16 +126,43 @@
         <version>2.1.5</version>
         <scope>compile</scope>
       </dependency>
+
+      <dependency>
+        <groupId>com.wolery</groupId>
+        <artifactId>nest</artifactId>
+        <version>${nest.version}</version>
+        <scope>compile</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.scalatest</groupId>
+        <artifactId>scalatest_${scala.binary.version}</artifactId>
+        <version>3.0.4</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.scalactic</groupId>
+        <artifactId>scalactic_${scala.binary.version}</artifactId>
+        <version>3.0.4</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.scalacheck</groupId>
+        <artifactId>scalacheck_${scala.binary.version}</artifactId>
+        <version>1.13.5</version>
+        <scope>test</scope>
+      </dependency>
+
       <dependency>
         <groupId>org.backuity</groupId>
-        <artifactId>ansi-interpolator_2.12</artifactId>
+        <artifactId>ansi-interpolator_${scala.binary.version}</artifactId>
         <version>1.1.0</version>
         <scope>provided</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
- <dependencies>
+  <dependencies>
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
@@ -161,13 +174,11 @@
   </dependencies>
   
   <build>
-
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
 
     <pluginManagement>
       <plugins>
-
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -199,7 +210,7 @@
                 <compilerPlugins>
                   <compilerPlugin>
                     <groupId>org.scalamacros</groupId>
-                    <artifactId>paradise_2.12.3</artifactId>
+                    <artifactId>paradise_${scala.version}</artifactId>
                     <version>2.1.1</version>
                   </compilerPlugin>
                 </compilerPlugins>
@@ -219,6 +230,7 @@
             </execution>
           </executions>
         </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -227,6 +239,7 @@
             <skipTests>true</skipTests>
           </configuration>
         </plugin>
+
         <plugin>
           <groupId>org.scalatest</groupId>
           <artifactId>scalatest-maven-plugin</artifactId>
@@ -264,7 +277,7 @@
                   <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                     <manifestEntries>
                       <Built>                    ${maven.build.timestamp}      </Built>
-                      <Profile>                  ${owl.profile}                </Profile>
+                      <Profile>                  ${profile.name}                </Profile>
                       <Description>              ${project.description}        </Description>
                       <Artifact-Id>              ${project.artifactId}         </Artifact-Id>
                       <Specification-Title>      ${project.name}               </Specification-Title>  
@@ -315,20 +328,18 @@
           <artifactId>versions-maven-plugin</artifactId>
           <version>2.5</version>
         </plugin>
-
       </plugins>
     </pluginManagement>
-
   </build>
   
- <profiles>
+  <profiles>
     <profile>
       <id>D</id>
       <properties>
-        <owl.profile>Debug [D]  </owl.profile>
+        <profile.name>Debug [D]</profile.name>
         <scalac.arg.1>-unchecked</scalac.arg.1>
-        <scalac.arg.2>          </scalac.arg.2>
-        <shade.minjar>false     </shade.minjar>
+        <scalac.arg.2></scalac.arg.2>
+        <shade.minjar>false</shade.minjar>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -338,12 +349,11 @@
     <profile>
       <id>R</id>
       <properties>
-        <owl.profile>Release [R]</owl.profile>
+        <profile.name>Release [R]</profile.name>
         <scalac.arg.1>-opt:l:inline</scalac.arg.1>
         <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
-        <shade.minjar>false     </shade.minjar>
+        <shade.minjar>false</shade.minjar>
       </properties>
     </profile>
   </profiles>
-  
 </project>
