@@ -31,9 +31,9 @@
   <inceptionYear>October 2017</inceptionYear>
 
   <scm>
-    <url>https://github.com/wolery/wolery</url>
-    <connection>scm:git:git://github.com/wolery/wolery.git</connection>
-    <developerConnection>scm:git:git@github.com:wolery/wolery.git</developerConnection>
+    <url>https://github.com/wolery/pom</url>
+    <connection>scm:git:git://github.com/wolery/pom.git</connection>
+    <developerConnection>scm:git:git@github.com:wolery/pom.git</developerConnection>
   </scm>
 
   <organization>
