@@ -171,10 +171,6 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.wolery</groupId>
-      <artifactId>nest</artifactId>
-    </dependency>
   </dependencies>
   
   <build>
