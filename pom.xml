@@ -98,7 +98,7 @@
       <dependency>
         <groupId>org.typelevel</groupId>
         <artifactId>cats-core_${scala.binary.version}</artifactId>
-        <version>1.0.0-RC1</version>
+        <version>1.0.1</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
