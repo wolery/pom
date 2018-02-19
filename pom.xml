@@ -277,12 +277,12 @@
                   <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                     <manifestEntries>
                       <Built>                    ${maven.build.timestamp}      </Built>
-                      <Profile>                  ${profile.name}                </Profile>
+                      <Profile>                  ${profile.name}               </Profile>
                       <Description>              ${project.description}        </Description>
                       <Artifact-Id>              ${project.artifactId}         </Artifact-Id>
                       <Specification-Title>      ${project.name}               </Specification-Title>  
                       <Specification-Vendor>     ${project.organization.name}  </Specification-Vendor>     
-                      <Specification-Version>    ${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}</Specification-Version>
+                      <Specification-Version>    ${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}.${project.artifact.selectedVersion.incrementalVersion}</Specification-Version>
                       <Implementation-Title>     ${project.name}               </Implementation-Title>     
                       <Implementation-Vendor>    ${project.organization.name}  </Implementation-Vendor>    
                       <Implementation-Vendor-Id> ${project.groupId}            </Implementation-Vendor-Id>    
