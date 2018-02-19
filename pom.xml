@@ -60,6 +60,7 @@
     <scala.binary.version>2.12</scala.binary.version>
     <maven.compiler.source>9</maven.compiler.source>
     <maven.compiler.target>9</maven.compiler.target>
+    <maven.build.timestamp.format>d MMMM',' yyyy 'at' hh:mma zz</maven.build.timestamp.format>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
