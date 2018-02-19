@@ -277,7 +277,8 @@
                   <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                     <manifestEntries>
                       <Built>                    ${maven.build.timestamp}      </Built>
-                      <Profile>                  ${profile.name}               </Profile>
+                      <Profile-Id>               ${profile.id}                 </Profile-Id>
+                      <Profile-Name>             ${profile.name}               </Profile-Name>
                       <Description>              ${project.description}        </Description>
                       <Artifact-Id>              ${project.artifactId}         </Artifact-Id>
                       <Specification-Title>      ${project.name}               </Specification-Title>  
@@ -336,7 +337,8 @@
     <profile>
       <id>D</id>
       <properties>
-        <profile.name>Debug [D]</profile.name>
+        <profile.id>D</profile.id>
+        <profile.name>Debug</profile.name>
         <scalac.arg.1>-unchecked</scalac.arg.1>
         <scalac.arg.2></scalac.arg.2>
         <shade.minjar>false</shade.minjar>
@@ -349,7 +351,8 @@
     <profile>
       <id>R</id>
       <properties>
-        <profile.name>Release [R]</profile.name>
+        <profile.id>R</profile.id>
+        <profile.name>Release</profile.name>
         <scalac.arg.1>-opt:l:inline</scalac.arg.1>
         <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
         <shade.minjar>true</shade.minjar>
