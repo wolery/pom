@@ -316,6 +316,9 @@
               </goals>
             </execution>
           </executions>
+          <configuration>
+            <executable>etc/bind.sh</executable>
+          </configuration>
         </plugin>
 
         <plugin>
