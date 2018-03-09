@@ -21,7 +21,7 @@
 
   <groupId>com.wolery</groupId>
   <artifactId>pom</artifactId>
-  <version>3</version>
+  <version>4</version>
   <packaging>pom</packaging>
 
   <name>Pom</name>
@@ -62,7 +62,7 @@
     <maven.compiler.target>9</maven.compiler.target>
     <maven.build.timestamp.format>d MMMM',' yyyy 'at' hh:mma zz</maven.build.timestamp.format>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.packager>etc/bind.sh</project.build.packager>
+    <project.build.packager>etc/package.sh</project.build.packager>
   </properties>
 
   <dependencyManagement>
