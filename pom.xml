@@ -192,7 +192,7 @@
           <version>3.3.1</version>
           <executions>
             <execution>
-              <id>compile</id>
+              <id>scala</id>
               <phase>compile</phase>
               <goals>
                 <goal>compile</goal>
@@ -218,7 +218,7 @@
               </configuration>
             </execution>
             <execution>
-              <id>document</id>
+              <id>scaladoc</id>
               <phase>install</phase>
               <goals>
                 <goal>doc</goal>
@@ -227,6 +227,28 @@
                 <args>
                   <arg>-groups</arg>
                 </args>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>nl.geodienstencentrum.maven</groupId>
+          <artifactId>sass-maven-plugin</artifactId>
+          <version>3.5.2</version>
+          <executions>
+            <execution>
+              <id>sass</id>
+              <phase>generate-resources</phase>
+              <goals>
+                <goal>update-stylesheets</goal>
+              </goals>
+              <configuration>
+                <sassSourceDirectory>src/main/sass</sassSourceDirectory>
+                <destination>${project.build.outputDirectory}/css</destination>
+                <sassOptions>
+                  <style>:compressed</style>
+                </sassOptions>
               </configuration>
             </execution>
           </executions>
@@ -252,6 +274,7 @@
           </configuration>
           <executions>
             <execution>
+              <id>scalatest</id>
               <goals>
                 <goal>test</goal>
               </goals>
@@ -269,6 +292,7 @@
           </configuration>
           <executions>
             <execution>
+              <id>shade</id>
               <phase>package</phase>
               <goals>
                 <goal>shade</goal>
@@ -305,27 +329,28 @@
           <version>1.6.0</version>
           <executions>
             <execution>
+              <id>package</id>
               <phase>package</phase>
               <goals>
                 <goal>exec</goal>
               </goals>
+              <configuration>
+                <executable>${project.build.packager}</executable>
+                <arguments>
+                  <argument>--project.groupId=${project.groupId}</argument>
+                  <argument>--project.artifactId=${project.artifactId}</argument>
+                  <argument>--project.version=${project.version}</argument>
+                  <argument>--project.organization=${project.organization.name}</argument>
+                  <argument>--project.url=${project.url}</argument>
+                  <argument>--project.name=${project.name}</argument>
+                  <argument>--project.description=${project.description}</argument>
+                  <argument>--project.mainClass=${project.build.mainClass}</argument>
+                  <argument>--profile.id=${profile.id}</argument>
+                  <argument>--profile.name=${profile.name}</argument>
+                </arguments>
+              </configuration>
             </execution>
           </executions>
-          <configuration>
-            <executable>${project.build.packager}</executable>
-            <arguments>
-              <argument>--project.groupId=${project.groupId}</argument>
-              <argument>--project.artifactId=${project.artifactId}</argument>
-              <argument>--project.version=${project.version}</argument>
-              <argument>--project.organization=${project.organization.name}</argument>
-              <argument>--project.url=${project.url}</argument>
-              <argument>--project.name=${project.name}</argument>
-              <argument>--project.description=${project.description}</argument>
-              <argument>--project.mainClass=${project.build.mainClass}</argument>
-              <argument>--profile.id=${profile.id}</argument>
-              <argument>--profile.name=${profile.name}</argument>
-            </arguments>
-          </configuration>
         </plugin>
 
         <plugin>
