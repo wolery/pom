@@ -244,7 +244,7 @@
                 <goal>update-stylesheets</goal>
               </goals>
               <configuration>
-                <sassSourceDirectory>src/main/sass</sassSourceDirectory>
+                <sassSourceDirectory>src/main/scss</sassSourceDirectory>
                 <destination>${project.build.outputDirectory}/css</destination>
                 <sassOptions>
                   <style>:compressed</style>
