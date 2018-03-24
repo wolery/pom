@@ -21,7 +21,7 @@
 
   <groupId>com.wolery</groupId>
   <artifactId>pom</artifactId>
-  <version>4</version>
+  <version>5</version>
   <packaging>pom</packaging>
 
   <name>Pom</name>
@@ -56,10 +56,10 @@
 
   <properties>
     <nest.version>1.0.0-SNAPSHOT</nest.version>
-    <scala.version>2.12.4</scala.version>
+    <scala.version>2.12.5</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
-    <maven.compiler.source>9</maven.compiler.source>
-    <maven.compiler.target>9</maven.compiler.target>
+    <maven.compiler.source>10</maven.compiler.source>
+    <maven.compiler.target>10</maven.compiler.target>
     <maven.build.timestamp.format>d MMMM',' yyyy 'at' hh:mma zz</maven.build.timestamp.format>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.packager>etc/package.sh</project.build.packager>
@@ -247,7 +247,7 @@
                 <sassSourceDirectory>src/main/scss</sassSourceDirectory>
                 <destination>${project.build.outputDirectory}/css</destination>
                 <sassOptions>
-                  <style>:compressed</style>
+                  <style>${sass.style}</style>
                 </sassOptions>
               </configuration>
             </execution>
@@ -382,6 +382,7 @@
         <profile.name>Debug</profile.name>
         <scalac.arg.1>-unchecked</scalac.arg.1>
         <scalac.arg.2></scalac.arg.2>
+        <sass.style>:expanded</sass.style>
         <shade.minjar>false</shade.minjar>
       </properties>
       <activation>
@@ -396,6 +397,7 @@
         <profile.name>Release</profile.name>
         <scalac.arg.1>-opt:l:inline</scalac.arg.1>
         <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
+        <sass.style>:compressed</sass.style>
         <shade.minjar>true</shade.minjar>
       </properties>
     </profile>
