@@ -56,7 +56,7 @@
 
   <properties>
     <nest.version>1.0.0-SNAPSHOT</nest.version>
-    <scala.version>2.12.5</scala.version>
+    <scala.version>2.12.4</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
     <maven.compiler.source>10</maven.compiler.source>
     <maven.compiler.target>10</maven.compiler.target>
@@ -100,7 +100,7 @@
       <dependency>
         <groupId>org.typelevel</groupId>
         <artifactId>cats-core_${scala.binary.version}</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
@@ -124,7 +124,7 @@
       <dependency>
         <groupId>de.codecentric.centerdevice</groupId>
         <artifactId>centerdevice-nsmenufx</artifactId>
-        <version>2.1.5</version>
+        <version>2.1.6</version>
         <scope>compile</scope>
       </dependency>
 
@@ -138,13 +138,13 @@
       <dependency>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest_${scala.binary.version}</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.scalactic</groupId>
         <artifactId>scalactic_${scala.binary.version}</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -208,13 +208,6 @@
                   <arg> ${scalac.arg.1} </arg>
                   <arg> ${scalac.arg.2} </arg>
                 </args>
-                <compilerPlugins>
-                  <compilerPlugin>
-                    <groupId>org.scalamacros</groupId>
-                    <artifactId>paradise_${scala.version}</artifactId>
-                    <version>2.1.1</version>
-                  </compilerPlugin>
-                </compilerPlugins>
               </configuration>
             </execution>
             <execution>
