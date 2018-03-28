@@ -27,7 +27,7 @@
   <name>Pom</name>
   <description>Provides central dependency management for Wolery projects.</description>
   <url>https://github.com/wolery/pom</url>
-  <inceptionYear>October 2017</inceptionYear>
+  <inceptionYear>2017</inceptionYear>
 
   <scm>
     <url>https://github.com/wolery/pom</url>
