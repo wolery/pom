@@ -189,7 +189,7 @@
         <plugin>
           <groupId>net.alchim31.maven</groupId>
           <artifactId>scala-maven-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>3.3.2</version>
           <executions>
             <execution>
               <id>scala</id>
@@ -250,7 +250,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.7</version>
+          <version>2.21.0</version>
           <configuration>
             <skipTests>true</skipTests>
           </configuration>
@@ -259,7 +259,7 @@
         <plugin>
           <groupId>org.scalatest</groupId>
           <artifactId>scalatest-maven-plugin</artifactId>
-          <version>1.0</version>
+          <version>2.0.0</version>
           <configuration>
             <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
             <junitxml>.</junitxml>
@@ -277,8 +277,34 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Built>                    ${maven.build.timestamp}      </Built>
+                <Main-Class>               ${project.build.mainClass}    </Main-Class>
+                <Profile-Id>               ${profile.id}                 </Profile-Id>
+                <Profile-Name>             ${profile.name}               </Profile-Name>
+                <Description>              ${project.description}        </Description>
+                <Artifact-Id>              ${project.artifactId}         </Artifact-Id>
+                <Specification-Title>      ${project.name}               </Specification-Title>  
+                <Specification-Vendor>     ${project.organization.name}  </Specification-Vendor>     
+                <Specification-Version>    ${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}.${project.artifact.selectedVersion.incrementalVersion}</Specification-Version>
+                <Implementation-URL>       ${project.url}                </Implementation-URL>    
+                <Implementation-Title>     ${project.name}               </Implementation-Title>     
+                <Implementation-Vendor>    ${project.organization.name}  </Implementation-Vendor>    
+                <Implementation-Vendor-Id> ${project.groupId}            </Implementation-Vendor-Id>    
+                <Implementation-Version>   ${project.version}            </Implementation-Version>    
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+        
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-shade-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.1.1</version>
           <configuration>
             <minimizeJar>${shade.minjar}</minimizeJar>
             <createDependencyReducedPom>false</createDependencyReducedPom>
@@ -290,28 +316,6 @@
               <goals>
                 <goal>shade</goal>
               </goals>
-              <configuration>
-                <transformers>
-                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                    <manifestEntries>
-                      <Built>                    ${maven.build.timestamp}      </Built>
-                      <Profile-Id>               ${profile.id}                 </Profile-Id>
-                      <Profile-Name>             ${profile.name}               </Profile-Name>
-                      <Description>              ${project.description}        </Description>
-                      <Artifact-Id>              ${project.artifactId}         </Artifact-Id>
-                      <Specification-Title>      ${project.name}               </Specification-Title>  
-                      <Specification-Vendor>     ${project.organization.name}  </Specification-Vendor>     
-                      <Specification-Version>    ${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}.${project.artifact.selectedVersion.incrementalVersion}</Specification-Version>
-                      <Implementation-Title>     ${project.name}               </Implementation-Title>     
-                      <Implementation-Vendor>    ${project.organization.name}  </Implementation-Vendor>    
-                      <Implementation-Vendor-Id> ${project.groupId}            </Implementation-Vendor-Id>    
-                      <Implementation-Version>   ${project.version}            </Implementation-Version>    
-                      <Implementation-URL>       ${project.url}                </Implementation-URL>    
-                    </manifestEntries>
-                   <mainClass>                   ${project.build.mainClass}    </mainClass>
-                  </transformer>
-                </transformers>
-              </configuration>
             </execution>
           </executions>
         </plugin>
@@ -355,7 +359,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
         </plugin>
 
         <plugin>
