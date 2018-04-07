@@ -241,6 +241,9 @@
                 <destination>${project.build.outputDirectory}/css</destination>
                 <sassOptions>
                   <style>${sass.style}</style>
+                  <precision>3</precision>
+                  <sourcemap>none</sourcemap>
+                  <unix_newlines>true</unix_newlines>
                 </sassOptions>
               </configuration>
             </execution>
