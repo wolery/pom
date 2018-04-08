@@ -242,8 +242,9 @@
                 <sassOptions>
                   <style>${sass.style}</style>
                   <precision>3</precision>
-                  <sourcemap>none</sourcemap>
+                  <sourcemap>:none</sourcemap>
                   <unix_newlines>true</unix_newlines>
+                  <default_encoding>'UTF-8'</default_encoding>
                 </sassOptions>
               </configuration>
             </execution>
