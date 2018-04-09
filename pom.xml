@@ -204,8 +204,9 @@
                   <arg>-language:existentials</arg>
                   <arg>-language:implicitConversions</arg>
                   <arg>-language:experimental.macros</arg>
-                  <arg>-Xlint</arg>
                   <arg>-Ypartial-unification</arg>
+                  <arg>-unchecked</arg>
+                  <arg>-Xlint:-missing-interpolator,-type-parameter-shadow</arg>
                   <arg> ${scalac.arg.1} </arg>
                   <arg> ${scalac.arg.2} </arg>
                 </args>
@@ -382,8 +383,6 @@
       <properties>
         <profile.id>D</profile.id>
         <profile.name>Debug</profile.name>
-        <scalac.arg.1>-unchecked</scalac.arg.1>
-        <scalac.arg.2></scalac.arg.2>
         <sass.style>:expanded</sass.style>
         <shade.minjar>false</shade.minjar>
       </properties>
