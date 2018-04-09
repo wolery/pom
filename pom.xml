@@ -204,6 +204,7 @@
                   <arg>-language:existentials</arg>
                   <arg>-language:implicitConversions</arg>
                   <arg>-language:experimental.macros</arg>
+                  <arg>-Xlint</arg>
                   <arg>-Ypartial-unification</arg>
                   <arg> ${scalac.arg.1} </arg>
                   <arg> ${scalac.arg.2} </arg>
