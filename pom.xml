@@ -396,7 +396,8 @@
       <properties>
         <profile.id>R</profile.id>
         <profile.name>Release</profile.name>
-        <scalac.arg.1>-opt:l:inline</scalac.arg.1>
+        <!--Disable closure-invocations/inline to work around crash in 2.12.5 compiler -->
+        <scalac.arg.1>-opt:l:inline,-closure-invocations,-inline</scalac.arg.1>
         <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
         <sass.style>:compressed</sass.style>
         <shade.minjar>true</shade.minjar>
