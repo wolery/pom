@@ -190,6 +190,19 @@
           <groupId>net.alchim31.maven</groupId>
           <artifactId>scala-maven-plugin</artifactId>
           <version>3.3.2</version>
+          <configuration>
+            <args>
+              <arg>-language:higherKinds</arg>
+              <arg>-language:existentials</arg>
+              <arg>-language:implicitConversions</arg>
+              <arg>-language:experimental.macros</arg>
+              <arg>-Ypartial-unification</arg>
+              <arg>-unchecked</arg>
+              <arg>-Xlint:-missing-interpolator,-type-parameter-shadow</arg>
+              <arg> ${scalac.arg.1} </arg>
+              <arg> ${scalac.arg.2} </arg>
+            </args>
+          </configuration>
           <executions>
             <execution>
               <id>scala</id>
@@ -198,19 +211,6 @@
                 <goal>compile</goal>
                 <goal>testCompile</goal>
               </goals>
-              <configuration>
-                <args>
-                  <arg>-language:higherKinds</arg>
-                  <arg>-language:existentials</arg>
-                  <arg>-language:implicitConversions</arg>
-                  <arg>-language:experimental.macros</arg>
-                  <arg>-Ypartial-unification</arg>
-                  <arg>-unchecked</arg>
-                  <arg>-Xlint:-missing-interpolator,-type-parameter-shadow</arg>
-                  <arg> ${scalac.arg.1} </arg>
-                  <arg> ${scalac.arg.2} </arg>
-                </args>
-              </configuration>
             </execution>
             <execution>
               <id>scaladoc</id>
@@ -218,11 +218,6 @@
               <goals>
                 <goal>doc</goal>
               </goals>
-              <configuration>
-                <args>
-                  <arg>-groups</arg>
-                </args>
-              </configuration>
             </execution>
           </executions>
         </plugin>
@@ -396,7 +391,7 @@
       <properties>
         <profile.id>R</profile.id>
         <profile.name>Release</profile.name>
-        <!--Disable closure-invocations/inline to work around crash in 2.12.5 compiler -->
+        <!--Skip some optimizations to work around crash in 2.12.{5,6} compilers -->
         <scalac.arg.1>-opt:l:inline,-closure-invocations,-inline</scalac.arg.1>
         <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
         <sass.style>:compressed</sass.style>
