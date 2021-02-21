@@ -327,6 +327,19 @@
             <minimizeJar>${shade.minjar}</minimizeJar>
             <createDependencyReducedPom>false</createDependencyReducedPom>
             <shadedArtifactAttached>true</shadedArtifactAttached>
+            <filters>
+              <filter>
+                <artifact>*:*</artifact>
+                <excludes>
+                  <exclude>rootdoc.txt</exclude>
+                  <exclude>NOTICE</exclude>
+                  <exclude>LICENSE</exclude>
+                  <exclude>META-INF/maven/**</exclude>
+                  <exclude>META-INF/NOTICE.txt</exclude>
+                  <exclude>META-INF/LICENSE.txt</exclude>
+                </excludes>
+              </filter>
+            </filters>
           </configuration>
           <executions>
             <execution>
