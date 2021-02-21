@@ -82,18 +82,26 @@
         <version>${scala.version}</version>
         <scope>compile</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-graphics</artifactId>
+        <version>${javafx.version}</version>
+        <scope>provided</scope>
+      </dependency>
       <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
         <version>${javafx.version}</version>
-        <scope>compile</scope>
+        <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-fxml</artifactId>
         <version>${javafx.version}</version>
-        <scope>compile</scope>
+        <scope>provided</scope>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
@@ -288,7 +296,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.2.0</version>
           <configuration>
             <archive>
               <manifestEntries>
