@@ -56,7 +56,7 @@
 
   <properties>
     <nest.version>1.0.0-SNAPSHOT</nest.version>
-    <scala.version>2.12.8</scala.version>
+    <scala.version>2.12.13</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
     <maven.compiler.source>12</maven.compiler.source>
     <maven.compiler.target>12</maven.compiler.target>
