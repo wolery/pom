@@ -50,10 +50,6 @@
     </developer>
   </developers>
 
-  <prerequisites>
-    <maven>3.0.4</maven>
-  </prerequisites>
-
   <properties>
     <nest.version>1.0.0-SNAPSHOT</nest.version>
     <scala.version>2.12.13</scala.version>
