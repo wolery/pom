@@ -155,19 +155,19 @@
       <dependency>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest_${scala.binary.version}</artifactId>
-        <version>3.0.5</version>
+        <version>3.2.5</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.scalactic</groupId>
         <artifactId>scalactic_${scala.binary.version}</artifactId>
-        <version>3.0.5</version>
+        <version>3.2.5</version>
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.scalacheck</groupId>
-        <artifactId>scalacheck_${scala.binary.version}</artifactId>
-        <version>1.13.5</version>
+        <groupId>org.scalatestplus</groupId>
+        <artifactId>scalacheck-1-15_${scala.binary.version}</artifactId>
+        <version>3.2.5.0</version>
         <scope>test</scope>
       </dependency>
 
@@ -206,19 +206,18 @@
         <plugin>
           <groupId>net.alchim31.maven</groupId>
           <artifactId>scala-maven-plugin</artifactId>
-          <version>3.3.2</version>
+          <version>4.4.1</version>
           <configuration>
             <args>
               <arg>-language:higherKinds</arg>
-              <arg>-language:existentials</arg>
+              <!-- <arg>-language:existentials</arg> -->
               <arg>-language:implicitConversions</arg>
-              <arg>-language:experimental.macros</arg>
-              <arg>-Ypartial-unification</arg>
+              <!-- <arg>-language:experimental.macros</arg> -->
               <arg>-deprecation</arg>
               <arg>-unchecked</arg>
               <arg>-Xlint:-missing-interpolator,-type-parameter-shadow</arg>
-              <arg> ${scalac.arg.1} </arg>
-              <arg> ${scalac.arg.2} </arg>
+              <!-- <arg> ${scalac.arg.1} </arg>
+              <arg> ${scalac.arg.2} </arg> -->
             </args>
           </configuration>
           <executions>
@@ -434,8 +433,8 @@
         <profile.name>Release</profile.name>
         <!--Skip certain optimizations to work around a crash in 2.12.{5,6} 
             compilers-->
-        <scalac.arg.1>-opt:l:inline,-closure-invocations,-inline</scalac.arg.1>
-        <scalac.arg.2>-Xdisable-assertions</scalac.arg.2>
+        <!-- <scalac.arg.1>-opt:l:inline,-closure-invocations,-inline</scalac.arg.1>
+        <scalac.arg.2>-Xdisable-assertions</scalac.arg.2> -->
         <sass.style>:compressed</sass.style>
         <shade.minjar>true</shade.minjar>
       </properties>
